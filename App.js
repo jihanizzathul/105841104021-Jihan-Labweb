@@ -3,33 +3,23 @@ import React from 'react'
 
 const App = () => {
   return ( 
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, justifyContent:'center',alignItems: 'center'}}>
       <View style={{
-        flex: 1, 
-        justifyContent: 'flex-start', 
-        alignItems: 'flex-start'
-      }}>
+          width: 100, 
+          height: 100, 
+          backgroundColor: 'red',
+      
+        }}>
+      </View>
+      
         <View style={{
           width: 100, 
           height: 100, 
-          backgroundColor: 'red'
+          backgroundColor: 'blue',
         }}>
         </View>
       </View>
     
-      <View style={{
-        flex: 1, 
-        justifyContent: 'flex-end', 
-        alignItems: 'flex-end'
-      }}>
-        <View style={{
-          width: 100, 
-          height: 100, 
-          backgroundColor: 'blue'
-        }}>
-        </View>
-      </View>
-    </View>
   )
 }
 
