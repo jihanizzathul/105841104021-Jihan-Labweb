@@ -7,15 +7,15 @@ const App = () => {
     <View style={{flex: 1, justifyContent:'center',alignItems: 'center'}}> 
 
       <Image 
-      source ={require('./logo.png')}
+        source ={require('./logo.png')}
         style={{ width:500, height:250, marginBottom:20}}>
-        </Image>
+      </Image>
 
     <Text style={{
       marginBottom: 20, fontSize:30, fontWeight:'bold'
     }}>
       Welcome Bestie❤️
-      </Text>
+    </Text>
 
 
     <View style={{ flexDirection :'row'}}>
@@ -36,10 +36,10 @@ const App = () => {
           color: 'white', fontSize:30, textAlign:'center', fontWeight:'bold'
           }}>
           Daftar
-        </Text>
+          </Text>
 
+        </View>
       </View>
-    </View>
     </View>
   </View>
     
