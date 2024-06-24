@@ -1,48 +1,62 @@
-import { StyleSheet, Text, View, Image} from 'react-native'
+import { StyleSheet, Text, View, TextInput} from 'react-native'
 import React from 'react'
 
-const App = () => {
-  return ( 
-  
-    <View style={{flex: 1, justifyContent:'center',alignItems: 'center'}}> 
+const ButtonCostum =({ text,color}) => {
+  return (
+    <View style ={{
+      backgroundColor :color,
+      width: 250,
+      height: 100,
+      borderRadius: 10,
+      justifyContent: 'center',
+      marginBottom: 10,
+  }}>
 
-      <Image 
-        source ={require('./logo.png')}
-        style={{ width:500, height:250, marginBottom:20}}>
-      </Image>
-
-    <Text style={{
-      marginBottom: 20, fontSize:30, fontWeight:'bold'
+  <Text style ={{
+      textAlign: 'center',
+      color :'white',
+      fontSize: 30,
+      fontWeight:'bold',
     }}>
-      Welcome Bestie❤️
+    {text}
     </Text>
+    </View>
+    )
+}
 
 
-    <View style={{ flexDirection :'row'}}>
-      <View style={{
-          width: 200, height: 50, backgroundColor: 'red',marginRight: 100, borderRadius:50, justifyContent:'center' }}>
+  const TextInputCustom = ({ placeholder, color, typeKeyboard }) => {
+    return (
+        <TextInput
+          placeholder = {placeholder}
+          keyboardType = {typeKeyboard}
+          style ={{
+          width : 250,
+          height:50,
+          borderColor: color,
+          borderWidth : 1,
+          borderRadius : 10,
+          marginBottom :10,
+          paddingLeft: 10,
 
-        <Text style={{ 
-          color: 'white', fontSize:30, textAlign:'center', fontWeight:'bold'
-          }}>
-          Masuk
-        </Text>
-      </View>
+        }} />
+      )
+    }
 
-    <View style={{flex: 1, justifyContent:'center',alignItems: 'center'}}> 
-      <View style={{
-          width: 200, height: 50, backgroundColor: 'blue', borderRadius:50, justifyContent:'center' }}>
-          <Text style={{ 
-          color: 'white', fontSize:30, textAlign:'center', fontWeight:'bold'
-          }}>
-          Daftar
-          </Text>
+  const App = () => {
+  return (
+    <View style = {{
+      flex :1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
 
-        </View>
+      <View>
+      <TextInputCustom placeholder="Masukkan Nama" color="purple" typeKeyboard="default" />
+      <TextInputCustom placeholder="Masukkan email" color="purple" typeKeyboard="default" />
+      <TextInputCustom placeholder="Masukkan Password" color="purple" typeKeyboard="default" />
       </View>
     </View>
-  </View>
-    
   )
 }
 
