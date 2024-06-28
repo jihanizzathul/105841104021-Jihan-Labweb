@@ -1,65 +1,37 @@
-import { StyleSheet, Text, View, TextInput} from 'react-native'
-import React from 'react'
+import { useFonts } from 'expo-font';
+import { View, Text } from 'react-native';
 
-const ButtonCostum =({ text,color}) => {
+export default function App() {
+  const [dapatFont] = useFonts({
+    'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold' : require ('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroLigt' : require ('./assets/fonts/Metropolis-Light.otf'),
+    'MetroSemiBold' : require ('./assets/fonts/Metropolis-SemiBold.otf'),
+  });
+
+  if (!dapatFont){
+    return <Text> Font tidak ditemukan...</Text>
+  }
   return (
     <View style ={{
-      backgroundColor :color,
-      width: 250,
-      height: 100,
-      borderRadius: 10,
-      justifyContent: 'center',
-      marginBottom: 10,
-  }}>
-
-  <Text style ={{
-      textAlign: 'center',
-      color :'white',
-      fontSize: 30,
-      fontWeight:'bold',
-    }}>
-    {text}
-    </Text>
-    </View>
-    )
-}
-
-
-  const TextInputCustom = ({ placeholder, color, typeKeyboard }) => {
-    return (
-        <TextInput
-          placeholder = {placeholder}
-          keyboardType = {typeKeyboard}
-          style ={{
-          width : 250,
-          height:50,
-          borderColor: color,
-          borderWidth : 1,
-          borderRadius : 10,
-          marginBottom :10,
-          paddingLeft: 10,
-
-        }} />
-      )
-    }
-
-  const App = () => {
-  return (
-    <View style = {{
       flex :1,
-      justifyContent: 'center',
-      alignItems: 'center'
+      justifyContent :'center',
+      alignItems :'center'
     }}>
+      <Text style = {{ 
+        fontFamily :'MetroBlack'
+    }}> Font Metropolis Black</Text>
+    <Text style = {{ 
+        fontFamily :'Semi Bold'
+    }}> Font Metropolis Semi Bold</Text>
+    <Text style = {{ 
+        fontFamily :'Ligth'
+    }}> Font Metropolis Light</Text>
+    <Text style = {{ 
+        fontFamily :'Bold'
+    }}> Font Metropolis Bold</Text>
+    <Text> ini Text biasa</Text>
 
-      <View>
-      <TextInputCustom placeholder="Masukkan Nama" color="purple" typeKeyboard="default" />
-      <TextInputCustom placeholder="Masukkan email" color="purple" typeKeyboard="default" />
-      <TextInputCustom placeholder="Masukkan Password" color="purple" typeKeyboard="default" />
-      </View>
     </View>
-  )
+  );
 }
-
-export default App
-
-const styles = StyleSheet.create({})
