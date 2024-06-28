@@ -22,13 +22,13 @@ export default function App() {
         fontFamily :'MetroBlack'
     }}> Font Metropolis Black</Text>
     <Text style = {{ 
-        fontFamily :'Semi Bold'
+        fontFamily :'MetroSemiBold'
     }}> Font Metropolis Semi Bold</Text>
     <Text style = {{ 
-        fontFamily :'Ligth'
+        fontFamily :'MetroLigth'
     }}> Font Metropolis Light</Text>
     <Text style = {{ 
-        fontFamily :'Bold'
+        fontFamily :'MetroBold'
     }}> Font Metropolis Bold</Text>
     <Text> ini Text biasa</Text>
 
