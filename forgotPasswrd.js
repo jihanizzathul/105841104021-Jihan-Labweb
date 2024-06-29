@@ -1,4 +1,4 @@
-import {Text, View, TextInput,TouchableOpacity, } from 'react-native'
+import {Text, View, TextInput,TouchableOpacity } from 'react-native'
 import React from 'react';
 import { useFonts } from 'expo-font';
 
