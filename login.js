@@ -93,7 +93,7 @@ const Login= () => {
         <Text style={{
           fontFamily: 'MetroMedium',
           marginRight:5,
-          fontSize:12,
+          fontSize:14,
           color: 'red',
           }}> Forgot Password?</Text>
 
@@ -103,7 +103,7 @@ const Login= () => {
           }}/>
         </TouchableOpacity> 
       
-      <View style={{marginBottom:50}}>
+      <View style={{marginBottom:100}}>
         <ButtonCustom text="LOGIN" color="red"/>
         </View>
 

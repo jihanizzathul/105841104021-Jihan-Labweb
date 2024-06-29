@@ -45,14 +45,15 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard })=> {
     );
 }
 
-const signUp = () => {
+const Login= () => {
   const [dapatFont] = useFonts({
     'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
     'MetroBold' : require ('./assets/fonts/Metropolis-Bold.otf'),
     'MetroLight' : require ('./assets/fonts/Metropolis-Light.otf'),
     'MetroSemiBold' : require ('./assets/fonts/Metropolis-SemiBold.otf'),
     'MetroMedium' : require ('./assets/fonts/Metropolis-Medium.otf'),
-  })
+  });
+
   if (!dapatFont){
     return <Text> Font tidak ditemukan...</Text>
   }
@@ -69,67 +70,60 @@ const signUp = () => {
     <Text style={{
         fontSize: 50,
         fontFamily: 'MetroBold',
-        marginBottom: 50,
-        marginTop: 50,
-        marginRight:20,
-      }}>Sign Up</Text>
+        marginTop: 20,
+        marginBottom:50,
+      }}>Login</Text>
 
-      <View style={{
-        justifyContent: 'center',
+    <View style={{
         alignItems: 'center',
-        width: '100%'
-        }}>
+        width:'100%',
+      }}>
 
       <TextInputCustom placeholder="Name" color="black" typeKeyboard="default"/>
-      <TextInputCustom placeholder="Email" color="black" typeKeyboard="email-address"/>
       <TextInputCustom placeholder="Password" color="black" typeKeyboard="default" />
-
-      <View style ={{
-          flexDirection:'row',
-          alignItems:'center',
-          marginBottom:20,
-          justifyContent:'flex-end',
-          marginBottom:20,
-          width: 320,
-    }}>
 
       <TouchableOpacity style ={{
           flexDirection: 'row',
-          alignItems: 'center'
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          width: 320,
+          marginBottom:20,
           }}>
 
         <Text style={{
-            marginRight:5,
-            fontSize:14,
-            fontFamily: 'MetroMedium',
-          }}> Already a member?</Text>
+          fontFamily: 'MetroMedium',
+          marginRight:5,
+          fontSize:14,
+          color: 'red',
+          }}> Forgot Password?</Text>
 
         <Image source={require('./assets/arrw.png')} style={{
             width: 20,
             height:20,
           }}/>
         </TouchableOpacity> 
-      </View>
-
+      
       <View style={{marginBottom:100}}>
-        <ButtonCustom text="SIGN UP" color="red"/>
-          </View>
+        <ButtonCustom text="LOGIN" color="red"/>
+        </View>
 
         <Text style={{
-            fontSize: 14,
-            color : '#555',
-            marginBottom: 10,
-            marginTop:10,
-            fontFamily: 'MetroMedium',
-            textAlign: 'center',
-            textDecorationLine: 'underline'
-        }}> Or sign up with social account</Text>
+          fontFamily: 'MetroMedium',
+          fontSize: 14,
+          color : '#555',
+          marginBottom: 10,
+          marginTop:10,
+          textAlign: 'center',
+          textDecorationLine: 'underline',
+          width :320,
+        }}> Or login with social account</Text>
 
         <View style={{
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
             marginBottom:30,
+            width:320,
         }}>
 
         <TouchableOpacity style={{
@@ -162,8 +156,8 @@ const signUp = () => {
 
             </View>
         </View>
-    </View>
+      </View>
   );
 }
 
-export default signUp
+export default Login
