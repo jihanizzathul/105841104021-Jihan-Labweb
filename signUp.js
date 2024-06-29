@@ -109,7 +109,9 @@ const signUp = () => {
         </TouchableOpacity> 
       </View>
 
+      <View style={{marginBottom:100}}>
         <ButtonCustom text="SIGN UP" color="red"/>
+          </View>
 
         <Text style={{
             fontSize: 14,

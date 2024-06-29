@@ -1,4 +1,4 @@
-import {Text, View, TextInput,TouchableOpacity, } from 'react-native'
+import {Text, View, TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react';
 import { useFonts } from 'expo-font';
 
@@ -45,15 +45,13 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard })=> {
     );
 }
 
-const ForgotPassword= () => {
+const signUp = () => {
   const [dapatFont] = useFonts({
     'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
     'MetroBold' : require ('./assets/fonts/Metropolis-Bold.otf'),
     'MetroLight' : require ('./assets/fonts/Metropolis-Light.otf'),
     'MetroSemiBold' : require ('./assets/fonts/Metropolis-SemiBold.otf'),
-    'MetroMedium' : require ('./assets/fonts/Metropolis-Medium.otf'),
-  });
-
+  })
   if (!dapatFont){
     return <Text> Font tidak ditemukan...</Text>
   }
@@ -68,32 +66,101 @@ const ForgotPassword= () => {
     }}>
 
     <Text style={{
-        fontSize: 40,
+        fontSize: 50,
         fontFamily: 'MetroBold',
-        marginTop: 20,
-        marginBottom:80,
-      }}>Forgot Password</Text>
+        marginBottom: 16,
+        marginTop: 50,
+        marginRight:20,
+      }}>Sign Up</Text>
 
       <View style={{
+        justifyContent: 'center',
         alignItems: 'center',
         width: '100%'
-      }}>
+        }}>
 
-    <Text style={{
-          fontFamily: 'MetroMedium',
-          marginRight:5,
-          fontSize:12,
-          textAlign : 'center',
-          }}> Please, enter your email addres. You will receive a link to create a new password via email</Text>
-      <View style={{marginBottom:50}}>
-      <TextInputCustom placeholder="enter your email" color="black" typeKeyboard="email-address"/>
+      <TextInputCustom placeholder="Name" color="black" typeKeyboard="default"/>
+      <TextInputCustom placeholder="Email" color="black" typeKeyboard="email-address"/>
+      <TextInputCustom placeholder="Password" color="black" typeKeyboard="default" />
+
+      <View style ={{
+          flexDirection:'row',
+          alignItems:'center',
+          marginBottom:20,
+          justifyContent:'flex-end',
+          marginBottom:20,
+          width: 320,
+    }}>
+
+      <TouchableOpacity style ={{
+          flexDirection: 'row',
+          alignItems: 'center'
+          }}>
+
+        <Text style={{
+            marginRight:5,
+            fontSize:14,
+          }}> Already a member?</Text>
+
+        <Image source={require('./assets/arrw.png')} style={{
+            width: 20,
+            height:20,
+          }}/>
+        </TouchableOpacity> 
       </View>
 
-        <ButtonCustom text="Confirm mail" color="red"/>
-      </View>
+      <View style={{marginBottom:100}}>
+        <ButtonCustom text="SIGN UP" color="red"/>
+          </View>
+
+        <Text style={{
+            fontSize: 14,
+            color : '#555',
+            marginBottom: 10,
+            marginTop:10,
+            textAlign: 'center',
+            textDecorationLine: 'underline'
+        }}> Or sign up with social account</Text>
+
+        <View style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom:30,
+        }}>
+
+        <TouchableOpacity style={{
+              width: 50,
+              height: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginHorizontal: 8,
+              }}>
+
+          <Image source={require('./assets/google.png')} style={{
+              width: 40,
+              height: 40,
+              }}/>
+          </TouchableOpacity>
+                
+            <TouchableOpacity style={{
+              width: 50,
+              height: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginHorizontal: 8,
+                }}>
+              
+            <Image source={require('./assets/fb.png')} style={{
+                width: 40,
+                height: 40,
+              }}/>
+                </TouchableOpacity>
+
+            </View>
+        </View>
     </View>
-    
   );
 }
 
-export default ForgotPassword
+export default signUp
