@@ -51,6 +51,7 @@ const signUp = () => {
     'MetroBold' : require ('./assets/fonts/Metropolis-Bold.otf'),
     'MetroLight' : require ('./assets/fonts/Metropolis-Light.otf'),
     'MetroSemiBold' : require ('./assets/fonts/Metropolis-SemiBold.otf'),
+    'MetroMedium' : require ('./assets/fonts/Metropolis-Medium.otf'),
   })
   if (!dapatFont){
     return <Text> Font tidak ditemukan...</Text>
@@ -68,7 +69,7 @@ const signUp = () => {
     <Text style={{
         fontSize: 50,
         fontFamily: 'MetroBold',
-        marginBottom: 16,
+        marginBottom: 50,
         marginTop: 50,
         marginRight:20,
       }}>Sign Up</Text>
@@ -100,6 +101,7 @@ const signUp = () => {
         <Text style={{
             marginRight:5,
             fontSize:14,
+            fontFamily: 'MetroMedium',
           }}> Already a member?</Text>
 
         <Image source={require('./assets/arrw.png')} style={{
@@ -118,6 +120,7 @@ const signUp = () => {
             color : '#555',
             marginBottom: 10,
             marginTop:10,
+            fontFamily: 'MetroMedium',
             textAlign: 'center',
             textDecorationLine: 'underline'
         }}> Or sign up with social account</Text>
