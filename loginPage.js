@@ -1,6 +1,7 @@
 import {Text, View, TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react';
 import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
 
 const ButtonCustom=({ text, color}) => {
   return (
@@ -54,6 +55,8 @@ const Login= () => {
     'MetroMedium' : require ('./assets/fonts/Metropolis-Medium.otf'),
   });
 
+  const Navigation = useNavigation();
+
   if (!dapatFont){
     return <Text> Font tidak ditemukan...</Text>
   }
@@ -82,13 +85,13 @@ const Login= () => {
       <TextInputCustom placeholder="Name" color="black" typeKeyboard="default"/>
       <TextInputCustom placeholder="Password" color="black" typeKeyboard="default" />
 
-      <TouchableOpacity style ={{
+      <TouchableOpacity style ={{ 
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'flex-end',
           width: 320,
           marginBottom:20,
-          }}>
+          }} onPress={() => Navigation.navigate('ForgotPassword')}>
 
         <Text style={{
           fontFamily: 'MetroMedium',

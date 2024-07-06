@@ -10,9 +10,7 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
-      <Button title='ke halaman login' onPress={() => navigation.navigate ('Login')} />
-      <Button title='ke halaman sign up' onPress={() => navigation.navigate ('SignUp')} />
-      <Button title='ke halaman Forgot Password' onPress={() => navigation.navigate ('ForgotPassword')} />
+          <Button title='WELCOME' onPress={() => navigation.navigate ('SignUp')} />
     </View>
   );
 }

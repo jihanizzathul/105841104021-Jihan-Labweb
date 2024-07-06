@@ -1,6 +1,7 @@
 import {Text, View, TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react';
 import { useFonts } from 'expo-font';
+import { useNavigation } from '@react-navigation/native';
 
 const ButtonCustom=({ text, color}) => {
   return (
@@ -53,6 +54,9 @@ const signUp = () => {
     'MetroSemiBold' : require ('./assets/fonts/Metropolis-SemiBold.otf'),
     'MetroMedium' : require ('./assets/fonts/Metropolis-Medium.otf'),
   })
+
+  const Navigation = useNavigation();
+
   if (!dapatFont){
     return <Text> Font tidak ditemukan...</Text>
   }
@@ -96,7 +100,7 @@ const signUp = () => {
       <TouchableOpacity style ={{
           flexDirection: 'row',
           alignItems: 'center'
-          }}>
+          }} onPress={() => Navigation.navigate('Login')}>
 
         <Text style={{
             marginRight:5,
