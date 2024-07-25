@@ -3,13 +3,13 @@ import { View, Text, Button, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import LoginPage from './loginPage';
-import SignUpPage from './signUpPage';
-import ForgetPasswordPage from './forgotPasswordPage';
 import ShopPage from './ShopPage';
 import BagPage from './BagPage';
 import FavoritePage from './FavoritPage';
 import ProfilePage from './ProfilePage';
+
 import HomeAktif from './assets/home-activated.png';
 import HomeInaktif from './assets/home-inactive.png';
 import ShopAktif from './assets/shop-activated.png';
@@ -105,14 +105,18 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }} />
-                <Stack.Screen name="SignUp" component={SignUpPage} options={{ headerShown: false }} />
-                <Stack.Screen name="Login" component={LoginPage} options={{ headerShown: false }} />
-                <Stack.Screen name="ForgetPassword" component={ForgetPasswordPage} options={{ headerShown: false }} />
-                <Stack.Screen name="ShopPage" component={ShopPage} options={{ headerShown: false }} />
-                <Stack.Screen name="BagPage" component={BagPage} options={{ headerShown: false }} />
-                <Stack.Screen name="FavoritePage" component={FavoritePage} options={{ headerShown: false }} />
-                <Stack.Screen name="ProfilePage" component={ProfilePage} options={{ headerShown: false }} />
+                <Stack.Screen name="Home" component={MyTabs} 
+                options={{ headerShown: false }} />
+                <Stack.Screen name="Login" component={LoginPage}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="ShopPage" component={ShopPage} 
+                options={{ headerShown: false }} />
+                <Stack.Screen name="BagPage" component={BagPage}
+                options={{ headerShown: false }}/>
+                <Stack.Screen name="FavoritePage" component={FavoritePage}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="ProfilePage" component={ProfilePage} 
+                options={{ headerShown: false }}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

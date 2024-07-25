@@ -4,7 +4,7 @@ import React from 'react'
 const BagPage = () => {
   return (
     <View>
-      <Text>BagPage</Text>
+      <Text>Ini adalah halaman Bag Anda</Text>
     </View>
   )
 }

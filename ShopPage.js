@@ -4,7 +4,7 @@ import React from 'react'
 const ShopPage = () => {
   return (
     <View>
-      <Text>ShopPage</Text>
+      <Text>ini adalah halaman Shop Anda</Text>
     </View>
   )
 }
