@@ -1,38 +1,36 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React, {useState , useEffect} from 'react'
-import axios from 'axios'
-import { TextInput } from 'react-native-web';
-const LoginSimak = () => {
-  const [data, setData] = useState({
-    nim: '',
+import { StyleSheet, Text, View, TextInput } from 'react-native'
+import React, { useState } from 'react'
+import { Button } from 'react-native-web'
+const App = () => {
+  const [formLogin, setForm] = useState({
+    email: '',
     password: ''
-  });
-
-  const onSubmit = () => {
-    axios.post('https://api.beasiswa.unismuh.ac.id/api/login', {
-      nim : data.nim,
-      password : data.password
-    })
-  }
+  })
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems : 'center'
-    }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Form Login</Text>
       <View>
-      <TextInput 
-      onChangeText={(value) => setData({...data, nim: value})}
-      placeholder="Nim"/>
-      <TextInput 
-      onChangeText={(value) => setData({...data, password: value})}
-      placeholder="Password" />
-      <Button title="Login" onPress={onSubmit} />
+        <Text>Email</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(hasil) => setForm({ ...formLogin, email: hasil })}
+          value={formLogin.email}
+        />
+        <Text>Password</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(text) => setForm({ ...formLogin, password: text })}
+          value={formLogin.password}
+        />
+        <View style={{ marginTop: 10 }}>
+          <Button title="Login" onPress={() => alert('Login')} />
+        </View>
+        <View>
+          <Text>Email: {formLogin.email}</Text>
+          <Text>Password: {formLogin.password}</Text>
+        </View>
       </View>
     </View>
   )
 }
-
-export default LoginSimak
-
-const styles = StyleSheet.create({})
+export default App

@@ -4,7 +4,7 @@ import React from 'react'
 const FavoritPage = () => {
   return (
     <View>
-      <Text>ini adalah halaman Favorit anda</Text>
+      <Text>FavoritPage</Text>
     </View>
   )
 }
