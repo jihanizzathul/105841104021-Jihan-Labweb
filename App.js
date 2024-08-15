@@ -13,6 +13,13 @@ import ProfilePage from './ProfilePage';
 import ShoesPage from './ShoesPage';
 import DetailProduk from './DetailProduk';
 import AllItems from './AllItems';
+import SearchPage from './SearchPage';
+import SearchPage2 from './SearchPage2';
+import SearchPage3 from './SearchPage3';
+import SearchTabNavigator from './SearchNavigator';
+import SortByPage from './SortByPage';
+import FilterPage from './FilterPage';
+import widgetNav from './widgetNav';
 
 import HomeAktif from './assets/home-activated.png';
 import HomeInaktif from './assets/home-inactive.png';
@@ -119,6 +126,20 @@ function App() {
                 <Stack.Screen name="DetailProduk" component={DetailProduk}
                 options={{ headerShown: false }} />
                 <Stack.Screen name="AllItems" component={AllItems}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="SearchPage" component={SearchPage}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="SearchPage2" component={SearchPage2}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="SearchPage3" component={SearchPage3}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="SearchNavigator" component={SearchTabNavigator}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="SortByPage" component={SortByPage}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="FilterPage" component={FilterPage}
+                options={{ headerShown: false }} />
+                <Stack.Screen name="widgetNav" component={widgetNav}
                 options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>

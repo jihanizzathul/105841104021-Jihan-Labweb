@@ -68,6 +68,25 @@ const FilterPage = () => {
     );
   };
 
+  const handleDiscard = () => {
+    setSelectedPriceRange([0, 100]);
+    setSelectedColors([]);
+    setSelectedSizes([]);
+    setSelectedCategory('All');
+    setSelectedBrands([]);
+  };
+
+  const handleApply = () => {
+    // Implementasikan logika penerapan filter sesuai kebutuhan aplikasi Anda
+    console.log('Filters applied:', {
+      selectedPriceRange,
+      selectedColors,
+      selectedSizes,
+      selectedCategory,
+      selectedBrands,
+    });
+  };
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.pageTitle}>Filter</Text>
@@ -148,6 +167,16 @@ const FilterPage = () => {
             <Text style={[styles.brandText, { color: selectedBrands.includes(brand) ? '#fff' : '#000' }]}>{brand}</Text>
           </TouchableOpacity>
         ))}
+      </View>
+
+      {/* Tombol Discard dan Apply */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.discardButton} onPress={handleDiscard}>
+          <Text style={styles.buttonText}>Discard</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.applyButton} onPress={handleApply}>
+          <Text style={styles.buttonText}>Apply</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -252,6 +281,31 @@ const styles = StyleSheet.create({
   },
   brandText: {
     fontSize: 16,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  discardButton: {
+    padding: 15,
+    backgroundColor: '#FF6347',
+    borderRadius: 5,
+    flex: 1,
+    marginRight: 10,
+  },
+  applyButton: {
+    padding: 15,
+    backgroundColor: '#008000',
+    borderRadius: 5,
+    flex: 1,
+    marginLeft: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

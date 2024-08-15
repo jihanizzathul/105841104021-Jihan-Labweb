@@ -1,23 +1,58 @@
-import React from 'react';
+// ShopPage.js (Tambahkan navigasi ke SortByPage)
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const categories = ['Shoes', 'Clothes', 'Accessories', 'T-Shirts', 'Summer'];
 
 const latestProducts = [
-    { id: 'latest1', image: require('./assets/7.png'), name: 'Latest Product 1', price: 19.99 },
-    { id: 'latest2', image: require('./assets/aa.png'), name: 'Latest Product 2', price: 29.99 },
-    { id: 'latest3', image: require('./assets/3.png'), name: 'Latest Product 3', price: 24.99 },
-    { id: 'latest4', image: require('./assets/a8.jpg'), name: 'Latest Product 4', price: 34.99 },
-    { id: 'latest5', image: require('./assets/2.png'), name: 'Latest Product 5', price: 39.99 },
+    { id: 'latest1', image: require('./assets/7.png'), name: 'Latest Product 1', price: 19.99, isNew: true, isSale: false, popularity: 100 },
+    { id: 'latest2', image: require('./assets/aa.png'), name: 'Latest Product 2', price: 29.99, isNew: true, isSale: true, popularity: 150 },
+    { id: 'latest3', image: require('./assets/3.png'), name: 'Latest Product 3', price: 24.99, isNew: false, isSale: true, popularity: 200 },
+    { id: 'latest4', image: require('./assets/a8.jpg'), name: 'Latest Product 4', price: 34.99, isNew: false, isSale: false, popularity: 250 },
+    { id: 'latest5', image: require('./assets/2.png'), name: 'Latest Product 5', price: 39.99, isNew: true, isSale: false, popularity: 300 },
 ];
 
-const ShopPage = ({ navigation }) => {
+const ShopPage = ({ navigation, route }) => {
+    const [sortedProducts, setSortedProducts] = useState(latestProducts);
+
+    useEffect(() => {
+        if (route.params?.sortOption) {
+            sortProducts(route.params.sortOption);
+        }
+    }, [route.params?.sortOption]);
+
+    const sortProducts = (sortOption) => {
+        let sorted = [...latestProducts];
+        switch (sortOption) {
+            case 'populer':
+                sorted = sorted.sort((a, b) => b.popularity - a.popularity);
+                break;
+            case 'new':
+                sorted = sorted.filter(product => product.isNew);
+                break;
+            case 'sale':
+                sorted = sorted.filter(product => product.isSale);
+                break;
+            case 'highToLow':
+                sorted = sorted.sort((a, b) => b.price - a.price);
+                break;
+            case 'lowToHigh':
+                sorted = sorted.sort((a, b) => a.price - b.price);
+                break;
+            default:
+                break;
+        }
+        setSortedProducts(sorted);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTextAbove}>WELCOME TO OUR STORE</Text>
+                <TouchableOpacity style={styles.widgetButton} onPress={() => navigation.navigate('widgetNav')}>
+                    <Image source={require('./assets/Widget.png')} style={styles.widgetIcon} />
+                </TouchableOpacity>
                 <Text style={styles.headerTitle}>Shop</Text>
-                <TouchableOpacity style={styles.searchButton} onPress={() => console.log('Search')}>
+                <TouchableOpacity style={styles.searchButton} onPress={() => navigation.navigate('SearchNavigator')}>
                     <Image source={require('./assets/search.png')} style={styles.searchIcon} />
                 </TouchableOpacity>
             </View>
@@ -47,7 +82,7 @@ const ShopPage = ({ navigation }) => {
                 <Text style={styles.sectionTitle}>Daftar Produk</Text>
 
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.productsContainer}>
-                    {latestProducts.map((product) => (
+                    {sortedProducts.map((product) => (
                         <View key={product.id} style={styles.productCard}>
                             <Image source={product.image} style={styles.productImage} />
                             <Text style={styles.productName}>{product.name}</Text>
@@ -63,6 +98,7 @@ const ShopPage = ({ navigation }) => {
         </View>
     );
 };
+
 
 const styles = StyleSheet.create({
     container: {
