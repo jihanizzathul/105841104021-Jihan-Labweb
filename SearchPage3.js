@@ -6,20 +6,20 @@ const SearchPage3 = () => {
   const [cropBox, setCropBox] = useState({ x: 50, y: 50, width: 200, height: 200 });
   const [showCamera, setShowCamera] = useState(true);
 
-  // Fungsi untuk memilih gambar (simulasi pengambilan foto)
+  
   const handleTakePhoto = () => {
     const placeholderImage = require('./assets/a3.png'); 
     setPhoto(placeholderImage);
     setShowCamera(false); 
   };
 
-  // Fungsi untuk meng-crop gambar berdasarkan kotak cropping
+
   const handleCropPhoto = () => {
     Alert.alert('Crop Photo', `Cropping at X: ${cropBox.x}, Y: ${cropBox.y}, Width: ${cropBox.width}, Height: ${cropBox.height}`);
-    // Implementasi cropping bisa dilakukan di sini.
+  
   };
 
-  // Fungsi untuk melakukan search dengan foto yang sudah diambil
+  
   const handleSearch = () => {
     if (photo) {
       Alert.alert('Search', 'Searching with the selected photo...');
@@ -28,7 +28,7 @@ const SearchPage3 = () => {
     }
   };
 
-  // PanResponder untuk mengatur cropping box
+  
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (evt, gestureState) => {

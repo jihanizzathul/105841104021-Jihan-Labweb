@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
+
 const SearchPage2 = () => {
   return (
     <ImageBackground 

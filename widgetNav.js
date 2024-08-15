@@ -9,7 +9,7 @@ const SearchTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarLabelStyle: { fontSize: 16, fontWeight: 'bold' }, // Gaya tab secara global
+        tabBarLabelStyle: { fontSize: 16, fontWeight: 'bold' }, 
       }}
     >
       <Tab.Screen 
@@ -17,7 +17,7 @@ const SearchTabNavigator = () => {
         component={SortByPage} 
         options={{ 
           tabBarLabel: 'Sort By', 
-          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, // Gaya khusus untuk tab Search
+          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, 
         }} 
       />
       <Tab.Screen 

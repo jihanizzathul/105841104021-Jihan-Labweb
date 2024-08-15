@@ -10,9 +10,9 @@ function DetailProduk({ route }) {
   const [selectedSize, setSelectedSize] = useState('M');
   const [selectedColor, setSelectedColor] = useState('White');
 
-  // Example rating data
-  const rating = 4; // Number of active stars
-  const totalRatings = 20; // Total number of ratings
+  
+  const rating = 4; 
+  const totalRatings = 20; 
 
   const renderStars = () => {
     const stars = [];

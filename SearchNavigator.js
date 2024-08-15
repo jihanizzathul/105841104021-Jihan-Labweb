@@ -10,7 +10,7 @@ const SearchTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarLabelStyle: { fontSize: 16, fontWeight: 'bold' }, // Gaya tab secara global
+        tabBarLabelStyle: { fontSize: 16, fontWeight: 'bold' }, 
       }}
     >
       <Tab.Screen 
@@ -18,7 +18,7 @@ const SearchTabNavigator = () => {
         component={SearchPage} 
         options={{ 
           tabBarLabel: 'Search', 
-          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, // Gaya khusus untuk tab Search
+          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, 
         }} 
       />
       <Tab.Screen 
@@ -26,7 +26,7 @@ const SearchTabNavigator = () => {
         component={SearchPage2} 
         options={{ 
           tabBarLabel: 'Advanced Search', 
-          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, // Gaya khusus untuk tab Advanced Search
+          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, 
         }} 
       />
       <Tab.Screen 
@@ -34,7 +34,7 @@ const SearchTabNavigator = () => {
         component={SearchPage3} 
         options={{ 
           tabBarLabel: 'Search take a photo', 
-          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, // Gaya khusus untuk tab Advanced Search
+          tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' }, 
         }} 
       />
     </Tab.Navigator>

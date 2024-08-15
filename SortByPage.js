@@ -1,4 +1,4 @@
-// SortByPage.js
+
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
@@ -12,7 +12,7 @@ const SortByPage = ({ navigation }) => {
     ];
 
     const handleSortOptionPress = (sortOption) => {
-        // Kirim data pengurutan kembali ke ShopPage
+       
         navigation.navigate('ShopPage', { sortOption });
     };
 

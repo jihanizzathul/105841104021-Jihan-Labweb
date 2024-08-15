@@ -1,4 +1,3 @@
-// ShopPage.js (Tambahkan navigasi ke SortByPage)
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
     },
     headerTextAbove: {
         position: 'absolute',
-        top: -20, // Mengatur posisi teks di atas judul "Shop"
+        top: -20, 
         left: 16,
         fontSize: 16,
         color: '#555',

@@ -31,7 +31,7 @@ const RatingPage = () => {
       comment: 'Very good, but could be improved.',
       testimonialImage: require('./assets/a2.png'),
     },
-    // Add more reviews here
+   
   ];
 
   const filteredReviews = showWithPhoto
@@ -43,9 +43,9 @@ const RatingPage = () => {
     for (let i = 1; i <= 5; i++) {
       let starSource;
       if (i <= count) {
-        starSource = require('./assets/Star-full.png'); // Full star for the rating level
+        starSource = require('./assets/Star-full.png'); 
       } else {
-        starSource = require('./assets/Star.png'); // Empty star for the remaining levels
+        starSource = require('./assets/Star.png'); 
       }
       stars.push(
         <Image

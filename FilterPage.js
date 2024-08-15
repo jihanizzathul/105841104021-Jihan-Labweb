@@ -77,7 +77,6 @@ const FilterPage = () => {
   };
 
   const handleApply = () => {
-    // Implementasikan logika penerapan filter sesuai kebutuhan aplikasi Anda
     console.log('Filters applied:', {
       selectedPriceRange,
       selectedColors,
@@ -169,7 +168,7 @@ const FilterPage = () => {
         ))}
       </View>
 
-      {/* Tombol Discard dan Apply */}
+      {}
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.discardButton} onPress={handleDiscard}>
           <Text style={styles.buttonText}>Discard</Text>

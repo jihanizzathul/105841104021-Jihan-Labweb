@@ -31,7 +31,7 @@ const WomenTops = () => {
         size: 'L',
         price: 80,
         rating: 5,
-        ratingCount: 42, // Tambahkan jumlah rating
+        ratingCount: 42, 
         loved: false,
       },
       {
@@ -58,7 +58,7 @@ const WomenTops = () => {
         />
       );
     }
-    // Tampilkan jumlah rating setelah bintang
+    
     stars.push(
       <Text key="ratingCount" style={styles.ratingText}>
         ({ratingCount})
@@ -89,7 +89,7 @@ const WomenTops = () => {
 
       <ScrollView horizontal contentContainerStyle={styles.categoryContainer}>
         {categories.map((category, index) => (
-          <TouchableOpacity key={index} style={styles.categoryButton} onPress={() => {/* Handle category press */}}>
+          <TouchableOpacity key={index} style={styles.categoryButton} onPress={() => {}}>
             <Text style={styles.categoryText}>{category}</Text>
           </TouchableOpacity>
         ))}
